@@ -1,0 +1,9 @@
+[
+    "Kaffee",
+    "Cappuccino",
+    "Latte Macchiato",
+    "Schoki",
+    "Ovomaltine",
+    "Tee",
+    "Schlagsahne"
+]
