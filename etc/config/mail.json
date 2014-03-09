@@ -1,0 +1,8 @@
+{
+    "imap" : {
+        "SSL" : true,
+        "host" : "imap.strato.de",
+        "username" : "kaffee@goth-1.de",
+        "password" : "sparka14"
+    }   
+}
