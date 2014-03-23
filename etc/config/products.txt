@@ -1,7 +1,7 @@
 [
     "Kaffee",
     "Cappuccino",
-    "Latte Macchiato",
+    "LatteMacchiato",
     "Schoki",
     "Ovomaltine",
     "Tee",
