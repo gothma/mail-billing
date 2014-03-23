@@ -45,7 +45,7 @@ class Mails:
 
         self.imap.login(config['imap']['username'], password)
 
-    def getMails(self, mailbox='INBOX', criterion='ALL'):
+    def get_mails(self, mailbox='INBOX', criterion='ALL'):
         """ Return a list of mail messages matching the arguments
 
         Keyword arguments:
@@ -56,7 +56,7 @@ class Mails:
         uids = self.imap.search(criterion)
         mails = self.imap.fetch(uids, ['RFC822'])
         emails = [message_from_string(m['RFC822']) for m in mails.values()]
-        return emails
+        return zip(uids, emails)
 
 
 def extract_text(mail):
@@ -73,4 +73,4 @@ def extract_text(mail):
 
 
 if __name__ == '__main__':
-    server = Mails(configFileName='mail.json')
+    server = Mails(configFileName='../etc/config/mail.json')
