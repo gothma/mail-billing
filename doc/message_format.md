@@ -1,6 +1,17 @@
 # Message Format
 
-## Syntax
+## Register
+
+    From: <user>
+    To: kaffee@example.com
+    Subject: REGISTER
+    
+    Message:
+    Name: <name>
+    IBAN: <iban>
+    BIC: <bic>
+
+## Buying
 
     From: <user>
     To:   kaffee@example.com
