@@ -6,7 +6,7 @@ from email import message_from_string
 
 class Mails:
 
-    def __init__(self, host=None, port=None, ssl=False, configFileName=None):
+    def __init__(self, host=None, port=None, ssl=False, config_file_name=None):
         """ Initialize and connect to the imap server
 
         An IMAPClient instance is created and connected to using the given
@@ -16,13 +16,13 @@ class Mails:
         host -- (mandatory) The URI of the IMAP server
         port -- (mandatory) The port of the IMAP server
         ssl -- (optional) If SSL should be used
-        configFileName -- (optional) Can be used instead of the other arguments
-        configFileName should be the file name of a JSON file of the following
+        config_file_name -- (optional) Can be used instead of the other
+        arguments and should be a JSON file of the following
         type: {"imap": {SSL, host, username, password}} with the inner pairs
         representing key-value pairs of the keyword arguments not stated."""
-        if configFileName:
+        if config_file_name:
             # Read from config file
-            with open(configFileName, 'r') as configFile:
+            with open(config_file_name, 'r') as configFile:
 
                 config = json.load(configFile)
                 ssl = config['imap'].get('SSL', False)
@@ -70,7 +70,3 @@ def extract_text(mail):
         if part.get_content_type() == 'text/plain':
             result_string += part.get_payload()
     return result_string
-
-
-if __name__ == '__main__':
-    server = Mails(configFileName='../etc/config/mail.json')

@@ -29,16 +29,19 @@ def parse_product_a(input):
     return int(match.groups()[0]), match.groups()[1]
 
 
-server = mails.Mails(configFileName='../etc/config/mail.json')
+def main():
+    server = mails.Mails(configFileName='../etc/config/mail.json')
 
-# Insert checking of the flags here
-buymails = server.get_mails('BUY', 'ALL')
+    # Insert checking of the flags here
+    buymails = server.get_mails('BUY', 'ALL')
 
+    for uid, mail in buymails:
+        users = mail.get('from', '')
+        try:
+            parse_product_list(mails.extract_text(mail), [users])
+        except:
+            server.imap.add_flags(uid, r'\FLAGGED')
+    print(countmatrix)
 
-for uid, mail in buymails:
-    users = mail.get('from', '')
-    try:
-        parse_product_list(mails.extract_text(mail), [users])
-    except:
-        server.imap.add_flags(uid, r'\FLAGGED')
-print(countmatrix)
+if __name__ == '__main__':
+    main()
