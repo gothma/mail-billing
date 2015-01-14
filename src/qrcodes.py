@@ -34,6 +34,6 @@ if __name__ == '__main__':
 
     for p in products:
         print(p)
-        qr = generate_mail_code('kaffee@goth-1.de',
-                                subject='BUY', body='1 %s' % p)
+        qr = generate_mail_code('kaffee@rohlandm.de',
+                                subject=p)
         qr.save("%s.png" % p)

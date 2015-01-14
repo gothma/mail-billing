@@ -1,9 +1,9 @@
 [
-    "Kaffee",
-    "Cappuccino",
-    "LatteMacchiato",
-    "Schoki",
-    "Ovomaltine",
-    "Tee",
-    "Schlagsahne"
+    "150ml Milch",
+    "270ml Milch",
+    "Teebeutel",
+    "Sahne",
+    "Sahneflasche",
+    "Eiscafe",
+    "Flasche Milch"
 ]
